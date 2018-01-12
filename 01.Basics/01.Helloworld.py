@@ -1,8 +1,13 @@
-# Hello Python
+# Python `Hello world` sample
 print 'Hello, world'
 
+# A function definition
 def greet():
+    """A function which prints a string"""
     print 'Hello from Python'
 
+# Invoke the function
 greet()
-print __name__ # prints __main__ if it is executed as a program
+
+# Prints __main__ if it is executed as a program
+print __name__
