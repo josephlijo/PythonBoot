@@ -48,10 +48,42 @@ int(b) # 3
 True
 >>> "hello".isdigit()
 False
->>> "123".isdigit()
+>>> "123".isdigit() # Useful when converting to int
 True
 >>> "Hello" == 'Hello'
 True
 >>> "Hello" == """Hello"""
 True
+>>> "Foo,Bar,21".split(",") # Useful when working with CSV files
+['Foo', 'Bar', '21'] # gets a List
 ```
+- Formatting
+```
+>>> "Name: {0}; Position: {1}".format("John Doe", "Software Engineer")
+'Name: John Doe; Position: Software Engineer'
+```
+- Formatting via **String Interpolation**
+```
+>>> name = "Sarah Doe"
+>>> position = "Manager"
+>>> f"Please meet {name}, the {position} of XYZ company"
+'Please meet Sarah Doe, the Manager of XYZ company'
+```
+
+### Booleans and **None**
+- Indicates `True` or `False`
+```
+>>> task_completed = True
+>>> int(task_completed) == 1
+True
+```
+- Python also has `NoneType` represented by `None`. It can be used as place-holder values.  
+If we declare a variable and don't assign any value, Python interpreter results in error, which can be avoided by using `None`
+```
+>>> task_completed = None
+>>> time_to_complete
+NameError: name 'time_to_complete' is not defined
+```
+
+## Conditional statements
+TODO://
