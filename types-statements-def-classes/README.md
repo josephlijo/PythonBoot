@@ -85,7 +85,7 @@ If we declare a variable and don't assign any value, Python interpreter results 
 NameError: name 'time_to_complete' is not defined
 ```
 
-## Conditional statements
+## Control flow statements
 
 ### If statements
 - If statements check conditions and can be clubbed with else block
@@ -162,3 +162,43 @@ Order is successful
 >>> "a is bigger" if a > b else "b is greater than a"
 'b is greater than a'
 ```
+
+## Data structures
+
+### Lists
+- List can hold *dynamic types*, for example, *string*, and *number*
+- List holds a series of values and the values can be accessed by using *index*
+```
+>>> fav_tools = ["JavaScript", "Python", "C"]
+>>> print(fav_tools[0])
+JavaScript
+```
+- Indexing **starts with 0** and to access the last element we can also use *-1* and previous element by **-1-1 = -2**  
+Note: there is no *-0* though indexing starts with *0*
+```
+>>> fav_tools = ["JavaScript", "Python", "C"]
+>>> fav_tools[-1]
+'C'
+>>> fav_tools[-2]
+'Python'
+```
+
+**List functions**
+- *append* to append to the end of a list `fav_tools.append("C#")`
+- To *check existence* `"C#" in fav_tools`
+- To check the length, pass in the list to `len` function `len(fav_tools)`
+- To delete an item we use `del` keyword and for iteration we can use `for ... in`:
+```
+>>> del fav_tools[0]
+>>> for i in fav_tools:
+...   print(i)
+```
+- *List slicking* or *skipping* can be done by specifying number of elements to skip **[n:]** or **[n:-n]** (Note: List is not modified in this case)
+```
+>>> fav_tools = ["Java", "JavaScript", "Python"]
+>>> fav_tools[1:]
+['JavaScript', 'Python']
+```
+
+## References
+- [Python Data structures](https://docs.python.org/3/tutorial/datastructures.html)
