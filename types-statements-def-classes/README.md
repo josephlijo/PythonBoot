@@ -86,4 +86,79 @@ NameError: name 'time_to_complete' is not defined
 ```
 
 ## Conditional statements
-TODO://
+
+### If statements
+- If statements check conditions and can be clubbed with else block
+```
+>>> number = 5
+>>> if number == 5:
+...   print("Number is 5")
+... else:
+...   print("Number is not 5")
+...
+Number is 5
+>>>
+```
+- In Python, the interpreter evaluates the statement based on indentation, not by the presence of curly braces or other characters
+- The `if` and `else` statement both ends with `:`, which is also a requirement in Python
+- `==`, double equality is used to check the values
+- `is` can be used to check if two objects are pointing to same location in memory  
+
+**Truthy and Falsy values**
+- Example:
+```
+>>> num = 11
+>>> if num:
+...   print("num variable is defined and hence it is truthy")
+...
+num variable is defined and hence it is truthy
+>>> txt = "Hello"
+>>> if txt:
+...   print("txt variable is defined and hence it is truthy")
+...
+txt variable is defined and hence it is truthy
+>>>
+```
+- Number variables which holds **value other than zero are truthy**
+- Text variables which **doesn't have empty string is truthy**
+- We could make use of this to check if the *value is defined*
+- These check can also be done against *Boolean* and *None* type. *True value is truthy* and *None type is falsy*
+
+**!= and not**
+- We can use *!=* to check it is *not a value*
+- *not* keyword can be used for evaluating against
+- Example,
+```
+>>> number = 2
+>>> if number != 3:
+...   print("Number is not 3")
+...
+Number is not 3
+>>> is_python = True
+>>> if not is_python:
+...   print("Is not Python")
+... else:
+...   print("Is Python")
+...
+Is Python
+```
+
+**Multiple conditions**
+- *and*, *or* keywords can be used for checking against multiple conditions:
+```
+>>> ranking = 10
+>>> is_valid = True
+>>> if ranking == 10 and is_valid:
+...   print("Order is successful")
+...
+Order is successful
+```
+
+**Ternary If statements**
+- Compared to other languages which uses *?* to check and evaluate one or other statement, Python uses a different format:
+```
+>>> a = 1
+>>> b = 2
+>>> "a is bigger" if a > b else "b is greater than a"
+'b is greater than a'
+```
