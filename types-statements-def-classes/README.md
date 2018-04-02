@@ -87,7 +87,7 @@ NameError: name 'time_to_complete' is not defined
 
 ## Control flow statements
 
-### If statements
+### If Statements
 - If statements check conditions and can be clubbed with else block
 ```
 >>> number = 5
@@ -163,6 +163,43 @@ Order is successful
 'b is greater than a'
 ```
 
+### for Statements
+- To loop over a list of items, we can use `for ... in`
+```
+>>> fav_tools = ["Java", "Python"]
+>>> for tool in fav_tools:
+...   print(tool, len(tool))
+...
+Java 4
+Python 6
+```
+- To loop over and insert an item, it is recommended to loop over a copy which could be done by slicing (`[:]`)
+```
+>>> fav_tools = ["Java", "Python"]
+>>> for tool in fav_tools[:]:
+...   if tool != "JavaScript":
+...     fav_tools.insert(0, "JavaScript")
+...
+>>> fav_tools
+['JavaScript', 'JavaScript', 'Java', 'Python']
+```
+- `for ... in` can be used with `List` type and strings; Python *abstract away the underlying type while using for...in*
+```
+>>> name = "Bond"
+>>> for letter in name:
+...   print(letter)
+...
+B
+o
+n
+d
+```
+- There can be cases where we need to know the *index* and other underlying details while doing iteration; in this case, we can use `range()` function  
+sometimes in combinatin with `len()`
+```
+TODO://
+```
+
 ## Data structures
 
 ### Lists
@@ -193,7 +230,7 @@ Note: there is no *-0* though indexing starts with *0*
 >>> for i in fav_tools:
 ...   print(i)
 ```
-- *List slicking* or *skipping* can be done by specifying number of elements to skip **[n:]** or **[n:-n]** (Note: List is not modified in this case)
+- *List slicling* or *skipping* can be done by specifying number of elements to skip **[n:]** or **[n:-n]** (Note: List is not modified in this case)
 ```
 >>> fav_tools = ["Java", "JavaScript", "Python"]
 >>> fav_tools[1:]
