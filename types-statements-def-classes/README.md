@@ -167,7 +167,7 @@ Order is successful
 - To loop over a list of items, we can use `for ... in`
 ```
 >>> fav_tools = ["Java", "Python"]
->>> for tool in fav_tools:
+>>> for tool in fav_tools: # There will be 2 iterations here and we don't control the index
 ...   print(tool, len(tool))
 ...
 Java 4
@@ -197,13 +197,35 @@ d
 - There can be cases where we need to know the *index* and other underlying details while doing iteration; in this case, we can use `range()` function  
 sometimes in combinatin with `len()`
 ```
-TODO://
+>>> i = 0
+>>> for index in range(5):
+...   i += index
+...   print("index is {0}; i is {1}".format(index, i))
+...
+index is 0; i is 0
+index is 1; i is 1
+index is 2; i is 3
+index is 3; i is 6
+index is 4; i is 10
+```
+- **Starting from zero index and iterating n times**: Here `range(5)` starts from 0 and goes all the way till *index < 5*  
+- **Starting from a specified index**: We can specify a starting index to `range`, say to start from 2 and iterate 3 times: range(2, 5)  
+- **Each iteration to move a specific index**: For example, *start from 0, increment 2 for 5* is
+```
+>>> for index in range(0, 10, 2):
+...   print("index is {0}".format(index))
+...
+index is 0
+index is 2
+index is 4
+index is 6
+index is 8
 ```
 
 ## Data structures
 
 ### Lists
-- List can hold *dynamic types*, for example, *string*, and *number*
+- List can hold *dynamic types*, for example, *string*, and *number* (though this is not good in any good scenario)
 - List holds a series of values and the values can be accessed by using *index*
 ```
 >>> fav_tools = ["JavaScript", "Python", "C"]
