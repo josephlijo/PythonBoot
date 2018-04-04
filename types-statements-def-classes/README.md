@@ -210,7 +210,7 @@ index is 4; i is 10
 ```
 - **Starting from zero index and iterating n times**: Here `range(5)` starts from 0 and goes all the way till *index < 5*  
 - **Starting from a specified index**: We can specify a starting index to `range`, say to start from 2 and iterate 3 times: range(2, 5)  
-- **Each iteration to move a specific index**: For example, *start from 0, increment 2 for 5* is
+- **Each iteration to move a specific index**: For example, *start from 0, increment 2 for 5 times* is
 ```
 >>> for index in range(0, 10, 2):
 ...   print("index is {0}".format(index))
@@ -221,6 +221,48 @@ index is 4
 index is 6
 index is 8
 ```
+
+### Break and Continue
+- `Break` keyword can be used to **break out of a loop and stop further iteration**
+```
+>>> fav_tools = ["Java", "JavaScript", "C"]
+>>> for tool in fav_tools:
+...   if tool == "JavaScript":
+...     print("Found JavaScript")
+...     break # <-----------------------
+...   print("Current tool is {0}".format(tool))
+...
+Current tool is Java
+Found JavaScript
+```
+- `Continue` keyword can be used to **continue the iteration and skip the logic after `continue` check inside a loop**
+```
+>>> # Don't do anything specific for "me"
+... starts = ["I", "me", "they", "you"]
+>>> for item in starts:
+...   if item == "me":
+...     continue
+...   print("I met {0}".format(item))
+...
+I met I
+I met they
+I met you
+```
+
+### While loops
+- To execute some logic *while a condition is met* - we can use `while` loop; `while` loops are useful as they checks the condition before even they enter the loop. It is up to coder to *control the iteration* unlike in `for ... in` - so be **careful not to cause infinite loops**.  
+`Break` keyword becomes more useful sometimes in `while always true` if we need to run *a piece of logic until a condition is met*.  
+Example of `while` loop usage: 
+```
+>>> rank = 10
+>>> while rank < 20:
+...   print("Rank is {0}".format(rank))
+...   rank += 5
+...
+Rank is 10
+Rank is 15
+```
+
 
 ## Data structures
 
