@@ -34,11 +34,13 @@ a + b # 45.5
 float(a) # 42.0
 int(b) # 3
 ```
+- `type(1)` is `<class 'int'>`
 
 ### Strings
 - By default strings are **Unicode text in Python3** and **ASCII text in Python2**.
 - String's can be defined by single, double, or triple quotes.
 - Triple quotes (""") are normally used to represent doc-types to give documentation for your statement / functions
+- `String` is of type `class str`
 ```
 >>> "hello".capitalize()
 'Hello'
@@ -266,7 +268,7 @@ Rank is 15
 
 ## Data structures
 
-### Lists
+### List
 - List can hold *dynamic types*, for example, *string*, and *number* (though this is not good in any good scenario)
 - List holds a series of values and the values can be accessed by using *index*
 ```
@@ -283,7 +285,8 @@ Note: there is no *-0* though indexing starts with *0*
 >>> fav_tools[-2]
 'Python'
 ```
-
+- `List` can be used as `Stack` data structure by `append`ing to the end of the list (`push`) and `pop`ing which removes the item at the end of the list - **FIFO** by `append` and `pop`
+- `List` can also be used like a `Queue` - **LIFO**, but it is not so efficient as once the item is removed (**dequeued**) from the *start* of a `List` the other items [needs to be shifted by one](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues).
 **List functions**
 - *append* to append to the end of a list `fav_tools.append("C#")`
 - To *check existence* `"C#" in fav_tools`
@@ -300,6 +303,60 @@ Note: there is no *-0* though indexing starts with *0*
 >>> fav_tools[1:]
 ['JavaScript', 'Python']
 ```
+
+### Dictionary
+- `Dictionary` holds key-value pairs as an item
+- The *value* can be of any type in a dictionary
+- Example: 
+```
+>>> person = {
+...   "name": "Foo",
+...   "age": 20
+... }
+>>> print(student)
+{'name': 'John', 'age': 20}
+>>> for item in student:
+...   print(item)
+...
+name
+age
+```
+Note: the iteration printed the `key` only
+- **Nested dictionaries* are when we have value as another dictionary
+- Useful when working with `JSON` as it is structured similar
+- *List of dictionary* is *similar to array of objects in JavaScript*
+```
+>>> person_list = [
+...    {"name": "Foo", "age": 20},
+...    {"name": "Bar", "age": 22}
+... ]
+```
+- Access value **by passing key**: 
+```
+>>> person = {"name": "Foo Bar", "age": 20}
+>>> person["name"]
+'Foo Bar'
+```
+- Access value **by using `get`**: 
+```
+>>> person.get("name")
+'Foo Bar'
+```
+- Note `KeyError` can occur if we access non-existing key:
+```
+>>> person["first_name"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'first_name'
+```
+- `KeyError` can be prevented by passing a second argument to `get`:
+```
+>>> person.get("first_name", "Not valid")
+'Not valid'
+```
+- To **get all values**: `person.values()` which returns *dict_values(['Foo Bar', 20])*
+- To **insert / update**: `person["newKey_or_existing_key"] = value`
+- To **delete** an item: `del person["name"]`
 
 ## References
 - [Python Data structures](https://docs.python.org/3/tutorial/datastructures.html)
