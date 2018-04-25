@@ -285,8 +285,9 @@ Note: there is no *-0* though indexing starts with *0*
 >>> fav_tools[-2]
 'Python'
 ```
-- `List` can be used as `Stack` data structure by `append`ing to the end of the list (`push`) and `pop`ing which removes the item at the end of the list - **FIFO** by `append` and `pop`
-- `List` can also be used like a `Queue` - **LIFO**, but it is not so efficient as once the item is removed (**dequeued**) from the *start* of a `List` the other items [needs to be shifted by one](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues).
+- `List` can be used as `Stack` data structure by `append`ing to the end of the list (`push`) and `pop`ing which removes the item at the end of the list - **LIFO** by `append` and `pop`
+- `List` can also be used like a `Queue` - **FIFO**, but it is not so efficient as once the item is removed (**dequeued**) from the *start* of a `List` the other items [needs to be shifted by one](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues).
+
 **List functions**
 - *append* to append to the end of a list `fav_tools.append("C#")`
 - To *check existence* `"C#" in fav_tools`
